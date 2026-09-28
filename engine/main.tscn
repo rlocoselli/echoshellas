@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://ui/theme/theme.tres" type="Theme" id=1]
 [ext_resource path="res://ui/options/options.tscn" type="PackedScene" id=2]
@@ -9,6 +9,15 @@
 [ext_resource path="res://ui/loading_screen/loading_screen.tscn" type="PackedScene" id=7]
 [ext_resource path="res://ui/credits/Credits.tscn" type="PackedScene" id=8]
 [ext_resource path="res://ui/main/public_servers.gd" type="Script" id=9]
+[ext_resource path="res://ui/main/hellas_sanctuary_hd.png" type="Texture" id=10]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.03, 0.085, 0.12, 0.94 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.78, 0.59, 0.32, 1 )
 
 [node name="main" type="Control"]
 anchor_right = 1.0
@@ -24,21 +33,48 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="bg" type="ColorRect" parent="."]
+[node name="bg" type="TextureRect" parent="."]
 margin_left = -16.0
 margin_top = -16.0
 margin_right = 528.0
 margin_bottom = 304.0
-color = Color( 0.0705882, 0.0196078, 0.0196078, 1 )
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 6
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
+[node name="bg_tint" type="ColorRect" parent="."]
+margin_left = -16.0
+margin_top = -16.0
+margin_right = 528.0
+margin_bottom = 304.0
+mouse_filter = 2
+color = Color( 0.012, 0.032, 0.068, 0.26 )
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 258.121, 55.1716 )
+position = Vector2( 258, 53 )
+scale = Vector2( 0.055, 0.055 )
 frames = ExtResource( 6 )
 animation = "Logo"
+
+[node name="Title" type="Label" parent="."]
+margin_left = 142.0
+margin_top = 88.0
+margin_right = 374.0
+margin_bottom = 107.0
+text = "ALETHEIA"
+align = 1
+
+[node name="Subtitle" type="Label" parent="."]
+margin_left = 142.0
+margin_top = 104.0
+margin_right = 374.0
+margin_bottom = 119.0
+text = "ECHOES OF HELLAS"
+align = 1
 
 [node name="top" type="Panel" parent="." groups=[
 "menu",
@@ -71,7 +107,7 @@ margin_top = 3.0
 margin_right = 144.0
 margin_bottom = 24.7537
 size_flags_stretch_ratio = 0.0
-text = "Quickstart"
+text = "Commencer l'odyssée"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -81,7 +117,7 @@ margin_top = 28.0
 margin_right = 144.0
 margin_bottom = 49.7537
 size_flags_stretch_ratio = 0.0
-text = "Multiplayer"
+text = "Jouer ensemble"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -91,7 +127,7 @@ margin_top = 53.0
 margin_right = 144.0
 margin_bottom = 74.7537
 size_flags_stretch_ratio = 0.0
-text = "Load Game"
+text = "Continuer"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -101,7 +137,7 @@ margin_top = 78.0
 margin_right = 144.0
 margin_bottom = 99.7537
 size_flags_stretch_ratio = 0.0
-text = "Credits"
+text = "Crédits"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -121,10 +157,65 @@ margin_top = 128.0
 margin_right = 144.0
 margin_bottom = 149.754
 size_flags_stretch_ratio = 0.0
-text = "Quit"
+text = "Quitter"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="intro" type="Panel" parent="." groups=[
+"menu",
+]]
+visible = false
+margin_left = 76.0
+margin_top = 84.0
+margin_right = 436.0
+margin_bottom = 264.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="intro"]
+margin_left = 24.0
+margin_top = 16.0
+margin_right = 336.0
+margin_bottom = 36.0
+text = "LE FIL ROMPU"
+align = 1
+
+[node name="Story" type="Label" parent="intro"]
+margin_left = 24.0
+margin_top = 44.0
+margin_right = 336.0
+margin_bottom = 130.0
+text = "Les Moires ont rompu le Fil de Vérité."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Progress" type="Label" parent="intro"]
+margin_left = 24.0
+margin_top = 139.0
+margin_right = 100.0
+margin_bottom = 158.0
+text = "1 / 3"
+
+[node name="Continue" type="Button" parent="intro"]
+margin_left = 215.0
+margin_top = 143.0
+margin_right = 336.0
+margin_bottom = 169.0
+text = "Suite"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Skip" type="Button" parent="intro"]
+margin_left = 106.0
+margin_top = 143.0
+margin_right = 205.0
+margin_bottom = 169.0
+text = "Passer"
 
 [node name="multiplayer" type="TabContainer" parent="." groups=[
 "menu",
@@ -411,6 +502,8 @@ visible = false
 [connection signal="pressed" from="top/VBoxContainer/options" to="." method="_on_options_pressed"]
 [connection signal="mouse_entered" from="top/VBoxContainer/quit" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="top/VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="intro/Continue" to="." method="_on_intro_continue_pressed"]
+[connection signal="pressed" from="intro/Skip" to="." method="_on_intro_skip_pressed"]
 [connection signal="pressed" from="multiplayer/Automatic/connect" to="." method="_on_connect_pressed"]
 [connection signal="pressed" from="multiplayer/Direct/host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="multiplayer/Direct/join" to="." method="_on_join_pressed"]

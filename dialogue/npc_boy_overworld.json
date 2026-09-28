@@ -5,8 +5,8 @@
 	 [
 		{
 			"id"      : 0,
-			"name"    : "Villager:",
-			"text"    : "Our shop isn't open yet, so you won't be able to purchase anything.",
+			"name"    : "Jeune habitant :",
+			"text"    : "Le marché est silencieux. Chacun se souvient d'une autre promesse. Si tu vas au sanctuaire, demande à l'Oracle ce qui est vrai.",
 			"next_id" : -1,
 			"choices" : [
 			]

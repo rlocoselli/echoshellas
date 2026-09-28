@@ -35,6 +35,18 @@ func _ready():
 	screenfx.play("fadein")
 	connect("player_entered", self, "player_entered")
 	network.connect("refresh_player_request", self, "refresh_player")
+	call_deferred("_apply_smooth_rendering")
+
+# Character and prop sprites can be softened without introducing seams between
+# adjacent atlas tiles. The TileMap textures must retain nearest filtering.
+func _apply_smooth_rendering():
+	_enable_smooth_textures(self)
+
+func _enable_smooth_textures(node):
+	if node is Sprite and node.texture:
+		node.texture.flags = node.texture.flags | Texture.FLAG_FILTER
+	for child in node.get_children():
+		_enable_smooth_textures(child)
 
 func _process(delta): # can be on screen change instead of process
 	if !network.is_map_host():
@@ -149,9 +161,5 @@ func update_spiritpearls():
 		global.pearl.clear()
 		network.peer_call(self, "update_spiritpearls")
 	global.emit_signal("debug_update")
-
-
-
-
 
 

@@ -43,17 +43,17 @@ jobs:
           mv templates/* ~/.local/share/godot/templates/3.3.2.stable
 
           mkdir -p $GITHUB_WORKSPACE/build
-          godot --export linux $GITHUB_WORKSPACE/build/TetraForce.x86_64
+          godot --export linux $GITHUB_WORKSPACE/build/AletheiaEchoesOfHellas.x86_64
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
           name: Client - linux
-          path: ${{ github.workspace }}/build/TetraForce.x86_64
+          path: ${{ github.workspace }}/build/AletheiaEchoesOfHellas.x86_64
       - name: Package
         run: |
           cd build
-          mkdir -p ${{github.workspace}}/tetraforce
-          zip -r ${{github.workspace}}/tetraforce/TetraForce.zip .
+          mkdir -p ${{github.workspace}}/aletheia
+          zip -r ${{github.workspace}}/aletheia/AletheiaEchoesOfHellas.zip .
       - name: Ship to S3
         uses: jakejarvis/s3-sync-action@master
         with:
@@ -63,7 +63,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: us-east-1
-          SOURCE_DIR: ${{github.workspace}}/tetraforce
+          SOURCE_DIR: ${{github.workspace}}/aletheia
           DEST_DIR: builds/master/latest/linux
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -113,17 +113,17 @@ jobs:
           mv templates/* ~/.local/share/godot/templates/3.3.2.stable
 
           mkdir -p $GITHUB_WORKSPACE/build
-          godot --export ${{ matrix.platform }} $GITHUB_WORKSPACE/build/TetraForce.exe
+          godot --export ${{ matrix.platform }} $GITHUB_WORKSPACE/build/AletheiaEchoesOfHellas.exe
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
           name: Client - ${{ matrix.platform }}
-          path: ${{ github.workspace }}/build/TetraForce.exe
+          path: ${{ github.workspace }}/build/AletheiaEchoesOfHellas.exe
       - name: Package
         run: |
           cd build
-          mkdir -p ${{github.workspace}}/tetraforce
-          zip -r ${{github.workspace}}/tetraforce/TetraForce.zip .
+          mkdir -p ${{github.workspace}}/aletheia
+          zip -r ${{github.workspace}}/aletheia/AletheiaEchoesOfHellas.zip .
       - name: Ship to S3
         uses: jakejarvis/s3-sync-action@master
         with:
@@ -133,7 +133,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: us-east-1
-          SOURCE_DIR: ${{github.workspace}}/tetraforce
+          SOURCE_DIR: ${{github.workspace}}/aletheia
           DEST_DIR: builds/master/latest/${{ matrix.platform }}
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -181,12 +181,12 @@ jobs:
           mv templates/* "/Users/runner/Library/Application Support/Godot/templates/3.3.2.stable"
 
           mkdir -p $GITHUB_WORKSPACE/build
-          godot --export osx $GITHUB_WORKSPACE/build/TetraForce.dmg
+          godot --export osx $GITHUB_WORKSPACE/build/AletheiaEchoesOfHellas.dmg
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
           name: "Client - OSX"
-          path: ${{ github.workspace }}/build/TetraForce.dmg
+          path: ${{ github.workspace }}/build/AletheiaEchoesOfHellas.dmg
   publish_osx:
     name: Publish OSX
     runs-on: ubuntu-latest
@@ -198,8 +198,8 @@ jobs:
         name: "Client - OSX"
     - name: Configure
       run: |
-        mkdir tetraforce
-        mv TetraForce.dmg ./tetraforce/TetraForce.dmg
+        mkdir aletheia
+        mv AletheiaEchoesOfHellas.dmg ./aletheia/AletheiaEchoesOfHellas.dmg
     - name: Ship to S3
       uses: jakejarvis/s3-sync-action@master
       with:
@@ -209,7 +209,7 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: us-east-1
-        SOURCE_DIR: ${{github.workspace}}/tetraforce
+        SOURCE_DIR: ${{github.workspace}}/aletheia
         DEST_DIR: builds/master/latest/osx
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1

@@ -1,14 +1,28 @@
-![Version](https://img.shields.io/github/v/tag/loudsmilestudios/TetraForce?label=version) ![Discord](https://img.shields.io/discord/637735060757544983?label=Discord) ![Build Godot Project](https://github.com/fornclake/TetraForce/workflows/Build%20Godot%20Project/badge.svg?branch=master)
+# Aletheia: Echoes of Hellas
 
-<img width="500" height="301" alt="Logo_FullyRendered_Small" src="https://github.com/user-attachments/assets/012812a1-d500-433c-9817-aeda9028b068" />
+<img width="256" alt="Aletheia owl-and-laurel emblem" src="ui/main/aletheia_emblem.png" />
 
-[Play Now!](https://theretrodragon.itch.io/tetraforce)
+An original co-operative top-down adventure set in a mythic Greece where the Thread of Truth has been cut. Explore sanctuaries, sea caves, labyrinths, and the agora as you solve puzzles together and confront the ideas behind each myth.
 
-TetraForce is an action adventure game inspired by various action platformer puzzle games, such as the top-down Legend of Zelda games and CrossCode. It is designed to be very replayable for casual and experienced players, whether they are playing by themselves or with friends. Three features we think are the most to get excited about are easy to utilize multiplayer, item randomizer, and moddability. With these features in mind and with more to come, it will be a brand new gaming experience inspired by some of the best games ever made.
+The opening now tells the story in three skippable chapters. New high-resolution sanctuary and hero illustrations frame the menus; in-game sprites keep their readable 16-pixel silhouettes while softer texture filtering, warmer firelight, grounded shadows, and a slimmer HUD update the play view.
 
-![Multiplayer Screenshot](https://miro.medium.com/max/2930/1*ydgwH7-VoGrR0l6yx1-_OQ.png)
+## The heroes
 
-TetraForce is built with the open source [Godot Engine](https://godotengine.org/)
+- **Thalia**, Seeker of Aletheia — wisdom and the patient question.
+- **Asteria**, Watcher of the Aegean — courage under uncertain skies.
+- **Dorian**, Guardian of the Polis — justice in action.
+
+## Campaign and artifacts
+
+Four new scenario briefs—Delphi, Knossos, the Isles of Aeolus, and a haunted Agora—are defined in [content/hellas_campaign.json](content/hellas_campaign.json). Core equipment is framed as the **Xiphos of Athena**, **Apollo’s Far-Sight**, **Hephaestus’ Firepot**, **Lamp of Diogenes**, and **Oracle’s Fragments**. Internal item IDs remain stable for existing maps and saves.
+
+The four scenario briefs are narrative plans, not yet four new playable maps.
+
+## Checks
+
+Run `node tests/content_check.js` for the prologue, campaign, visual assets, and Greek dialogue links. With Godot 3.3.2 installed, run `godot --path . -s res://tests/smoke.gd` to check that the main scenes and new artwork load. Both checks run in the Linux build workflow.
+
+Aletheia is built with the open source [Godot Engine](https://godotengine.org/). Git ignores generated Godot state and build outputs while retaining source maps and assets.
 
 ## Links
 

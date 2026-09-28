@@ -6,7 +6,7 @@
 		{
 			"id"      : 0,
 			"name"    : "Sign:",
-			"text"    : "Please remove footwear before entering the Shrine.",
+			"text"    : "Sanctuary of Athena. Enter with a clear mind and leave pride at the threshold.",
 			"next_id" : -1,
 			"choices" : []
 		}

@@ -5,11 +5,11 @@
 	 [
 		{
 			"id"      : 0,
-			"name"    : "You got the Bombs!",
-			"text"    : "Press Start to equip to B, X, or Y. Use it to lay an explosive bomb, and remove obstacles.",
+			"name"    : "Hephaestus' Firepots!",
+			"text"    : "The forge god's charges can break brittle stone. Press Start to equip one to B, X, or Y.",
 			"next_id" : -1,
 			"choices" : []
-		},
+		}
 
 	]
 

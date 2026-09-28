@@ -11,7 +11,7 @@ func _ready():
 	self.hide()
 
 # Displays and configures loading screen
-func start_loading(initial_message = "TetraForce", init_percent = 0):
+func start_loading(initial_message = "Aletheia: Echoes of Hellas", init_percent = 0):
 	set_loading_message(initial_message)
 	update_background_image()
 	$animation_player.play("loading")

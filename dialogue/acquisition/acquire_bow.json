@@ -5,11 +5,11 @@
 	 [
 		{
 			"id"      : 0,
-			"name"    : "You got the Bow!",
-			"text"    : "Press Start to equip to B, X, or Y. Use it to fire arrows at distant targets.",
+			"name"    : "Apollo's Far-Sight!",
+			"text"    : "The god of clear sight lends you his bow. Press Start to equip it to B, X, or Y; arrows reach distant targets.",
 			"next_id" : -1,
 			"choices" : []
-		},
+		}
 
 	]
 

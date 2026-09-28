@@ -1,0 +1,22 @@
+{
+  "campaign": "Aletheia: Echoes of Hellas",
+  "premise": "The Moirai have cut the Thread of Truth. Three sworn heroes travel the Aegean to restore it before the polis forgets justice, courage, and wisdom.",
+  "heroes": [
+    {"id": "Thalia", "role": "Seeker of Aletheia", "virtue": "Wisdom", "inspiration": "Athena and Socratic inquiry"},
+    {"id": "Asteria", "role": "Watcher of the Aegean", "virtue": "Courage", "inspiration": "Artemis and the constellations"},
+    {"id": "Dorian", "role": "Guardian of the Polis", "virtue": "Justice", "inspiration": "the citizen-warrior ideal"}
+  ],
+  "artifacts": [
+    {"id": "Sword", "name": "Xiphos of Athena", "power": "A disciplined close-range strike"},
+    {"id": "Bow", "name": "Apollo's Far-Sight", "power": "A precise shot across a puzzle room"},
+    {"id": "Bomb", "name": "Hephaestus' Firepot", "power": "Breaks brittle stone and hidden seals"},
+    {"id": "Lantern", "name": "Lamp of Diogenes", "power": "Lights caverns and exposes concealed routes"},
+    {"id": "Spiritpearl", "name": "Oracle's Fragment", "power": "Four fragments grant another heart"}
+  ],
+  "scenarios": [
+    {"id": "oracle_of_delphi", "title": "The Silent Oracle", "setting": "A mountain sanctuary above Delphi", "objective": "Use the Lamp of Diogenes to read shadow inscriptions, then open the spring with Apollo's Far-Sight.", "reward": "Oracle's Fragment", "philosophical_question": "Is knowledge received, or earned by asking better questions?"},
+    {"id": "labyrinth_of_knossos", "title": "The Thread Beneath Knossos", "setting": "A flooded Cretan labyrinth", "objective": "Mark a shared route, solve the four-virtue gate, and face the echo without becoming lost in rage.", "reward": "Xiphos of Athena blessing", "philosophical_question": "What makes a person the same self after every turning?"},
+    {"id": "isles_of_aeolus", "title": "The Unbound Winds", "setting": "Wind-carved Cycladic islands", "objective": "Coordinate switches across sea caves and return each wind to its proper vessel.", "reward": "Poseidon's Talisman", "philosophical_question": "Can freedom survive without responsibility?"},
+    {"id": "agora_of_shadows", "title": "The Trial in the Agora", "setting": "A moonlit agora haunted by false testimony", "objective": "Compare accounts, uncover contradictions, and choose the just remedy rather than the easy verdict.", "reward": "Laurel of Civic Concord", "philosophical_question": "Is justice merely agreement, or does it ask more of us?"}
+  ]
+}

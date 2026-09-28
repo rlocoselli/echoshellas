@@ -3,9 +3,9 @@ extends Control
 var selected = 0
 
 var skins = {
-	"Chain": "res://entities/player/chain.png",
-	"Knot": "res://entities/player/knot.png",
-	"Key": "res://entities/player/key.png",
+	"Thalia": "res://entities/player/chain.png",
+	"Asteria": "res://entities/player/knot.png",
+	"Dorian": "res://entities/player/key.png",
 }
 
 func _ready():

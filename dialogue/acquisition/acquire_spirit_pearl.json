@@ -5,11 +5,11 @@
 	 [
 		{
 			"id"      : 0,
-			"name"    : "You Found a Spirit Pearl!",
-			"text"    : "Collect four pearls to gain extra health.",
+			"name"    : "Oracle's Fragment!",
+			"text"    : "Gather four fragments of the oracle's truth to strengthen your spirit and gain another heart.",
 			"next_id" : -1,
 			"choices" : []
-		},
+		}
 
 	]
 

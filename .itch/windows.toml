@@ -1,6 +1,6 @@
 [[actions]]
 name = "play"
-path = "TetraForce.exe"
+path = "AletheiaEchoesOfHellas.exe"
 scope = "profile:me"
 sandbox = true
 platform = "windows"

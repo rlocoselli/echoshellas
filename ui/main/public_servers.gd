@@ -4,11 +4,11 @@ export(int) var number_of_servers = 2
 export(NodePath) var _main
 export(NodePath) var _button_container
 
-export(Array, String) var name_gen_first_part = [ "Tetra", "First", "Second", "Third", "Fourth" ]
-export(Array, String) var name_gen_middle_part = [ "of" ]
-export(Array, String) var name_gen_end_part = [ "Friends", "Force" ]
-export(Array, String) var name_gen_any_part = [ "Sword", "Bow", "Dungeon", "Fire", "Doom", "Chain",
-		"Knot", "Key", "Pirate", "Bat", "Knawblin", "Cucukin", "Village" ]
+export(Array, String) var name_gen_first_part = [ "Athena", "Delphi", "Aegean", "Olympus", "Nemea" ]
+export(Array, String) var name_gen_middle_part = [ "of", "and", "at" ]
+export(Array, String) var name_gen_end_part = [ "Laurels", "Olives", "Muses", "Owls", "Argonauts" ]
+export(Array, String) var name_gen_any_part = [ "Xiphos", "Apollo", "Agora", "Labyrinth", "Oracle", "Thalia",
+		"Asteria", "Dorian", "Naiad", "Satyr", "Gorgon", "Polis" ]
 
 var main : Main
 var button_container : Control

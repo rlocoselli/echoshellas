@@ -12,7 +12,8 @@ func _ready():
 	set_process(false)
 	
 func _physics_process(delta):
-	global.player.get_node("Light2D").enabled = global.items.has("Lantern") #Moved so it updates while your in a dark room
+	if is_instance_valid(global.player):
+		global.player.get_node("Light2D").enabled = global.items.has("Lantern")
 
 func initialize(node):
 	target = node
@@ -71,10 +72,11 @@ func set_light(mode):
 	if mode == "dark":
 		$CanvasModulate.color = Color(0, 0, 0, 1.0)
 	else:
-		$CanvasModulate.color = Color(1.0, 1.0, 1.0, 1.0)
-		target.get_node("Light2D").enabled = false
-		for light in get_tree().get_nodes_in_group("light_halo"):
-			light.enabled = false
+		$CanvasModulate.color = Color(1.0, 0.98, 0.94, 1.0)
+		if is_instance_valid(target):
+			target.get_node("Light2D").enabled = false
+	for light in get_tree().get_nodes_in_group("light_halo"):
+		light.enabled = true
 			
 func on_screen_shake():
 	$AnimationPlayer.play("screenshake")

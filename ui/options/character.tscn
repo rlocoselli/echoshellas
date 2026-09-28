@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://entities/player/chain.png" type="Texture" id=2]
 [ext_resource path="res://ui/main/characterselect.gd" type="Script" id=3]
 [ext_resource path="res://ui/theme/font.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://ui/options/hero_lineup_hd.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 loop = true
@@ -30,6 +31,17 @@ margin_left = 108.0
 margin_top = 103.0
 margin_right = 408.0
 margin_bottom = 273.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HeroLineup" type="TextureRect" parent="."]
+margin_right = 300.0
+margin_bottom = 170.0
+mouse_filter = 2
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -67,7 +79,7 @@ margin_top = 68.1777
 margin_right = 178.028
 margin_bottom = 101.585
 custom_fonts/font = SubResource( 2 )
-text = "Chain"
+text = "Thalia"
 align = 1
 max_length = 10
 caret_blink = true
@@ -102,7 +114,7 @@ margin_top = 5.64322
 margin_right = 208.0
 margin_bottom = 21.6432
 custom_fonts/font = SubResource( 3 )
-text = "Character skin and player name"
+text = "Choose a hero of Hellas"
 align = 1
 autowrap = true
 __meta__ = {

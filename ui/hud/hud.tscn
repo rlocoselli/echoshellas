@@ -225,6 +225,19 @@ tracks/3/keys = {
 [node name="hud" type="CanvasLayer"]
 script = ExtResource( 3 )
 
+[node name="StatusBackdrop" type="ColorRect" parent="."]
+margin_right = 256.0
+margin_bottom = 22.0
+mouse_filter = 2
+color = Color( 0.025, 0.075, 0.13, 0.72 )
+
+[node name="BronzeRule" type="ColorRect" parent="."]
+margin_top = 21.0
+margin_right = 256.0
+margin_bottom = 22.0
+mouse_filter = 2
+color = Color( 0.77, 0.57, 0.29, 0.68 )
+
 [node name="hud2d" type="MarginContainer" parent="."]
 margin_right = 256.0
 margin_bottom = 144.0

@@ -15,6 +15,6 @@ RUN useradd -d /tetra tetra
 
 
 # Add pck file
-ADD build/TetraForce.pck /tetra/TetraForce.pck
+ADD build/AletheiaEchoesOfHellas.pck /tetra/AletheiaEchoesOfHellas.pck
 
-CMD /usr/local/bin/godot --main-pack /tetra/TetraForce.pck --empty-server-timeout=900
+CMD /usr/local/bin/godot --main-pack /tetra/AletheiaEchoesOfHellas.pck --empty-server-timeout=900

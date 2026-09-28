@@ -6,7 +6,7 @@
 		{
 			"id"      : 0,
 			"name"    : "Sign:",
-			"text"    : "Welcome to Tiskal Village.",
+			"text"    : "Welcome to the polis of Nemea. Let every guest speak freely and every citizen listen well.",
 			"next_id" : -1,
 			"choices" : []
 		}

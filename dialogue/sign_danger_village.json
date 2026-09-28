@@ -6,7 +6,7 @@
 		{
 			"id"      : 0,
 			"name"    : "Sign:",
-			"text"    : "DANGER! Ancient challenge statue to the left. Not for the weak.",
+			"text"    : "Warning: the Trial of Arete lies to the west. Courage without judgment becomes recklessness.",
 			"next_id" : -1,
 			"choices" : []
 		}

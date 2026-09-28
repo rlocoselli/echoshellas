@@ -5,11 +5,11 @@
 	 [
 		{
 			"id"      : 0,
-			"name"    : "You got the Lantern!",
-			"text"    : "This Item is passive. Now you can light the darkest areas and see your way through.",
+			"name"    : "Lamp of Diogenes!",
+			"text"    : "Its honest flame is a passive artifact. It lights the darkest paths and reveals the way onward.",
 			"next_id" : -1,
 			"choices" : []
-		},
+		}
 
 	]
 

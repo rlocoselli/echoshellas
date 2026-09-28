@@ -5,16 +5,16 @@
 	 [
 		{
 			"id"      : 0,
-			"name"    : "Old Man:",
-			"text"    : "My son is the Blacksmith. I'm sorry if you were looking for him, he's out at the moment.",
+			"name"    : "L'ancien forgeron :",
+			"text"    : "Mon fils cherche les braises d'Héphaïstos. Depuis que l'Oracle se tait, même le feu de la forge vacille.",
 			"next_id" : 1,
 			"choices" : []
 		},
 
 		{
 			"id"      : 1,
-			"name"    : "Old Man:",
-			"text"    : "Please try and come back later.",
+			"name"    : "L'ancien forgeron :",
+			"text"    : "On raconte qu'un fragment repose près du sanctuaire. Une bonne lame aide, mais il faut savoir pourquoi on la tire.",
 			"next_id" : -1,
 			"choices" : []
 		}

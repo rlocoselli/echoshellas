@@ -54,5 +54,8 @@ shape = SubResource( 2 )
 [node name="Light2D" type="Light2D" parent="." groups=[
 "light_halo",
 ]]
+color = Color( 1, 0.72, 0.42, 1 )
+energy = 0.72
 texture = ExtResource( 3 )
+texture_scale = 1.3
 mode = 2

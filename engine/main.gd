@@ -5,6 +5,9 @@ var default_map = "res://maps/shrine.tmx"
 var default_entrance = "player_start"
 export var default_port = 7777
 var server_api = preload("res://engine/server_api.gd").new()
+const PROLOGUE_PATH = "res://content/prologue.json"
+var prologue_pages = []
+var prologue_page = 0
 
 onready var address_line = $multiplayer/Direct/address
 onready var lobby_line = $multiplayer/Automatic/lobby
@@ -63,7 +66,35 @@ func _ready():
 	
 	yield(get_tree().create_timer(0.5), "timeout")
 	sfx.set_music("shrine", "quiet")
-	singleplayer_focus.grab_focus()
+	if OS.get_name() != "Server" and arguments.get("dedicatedserver") != "true" and not arguments.has("map"):
+		_show_prologue()
+
+func _show_prologue():
+	var story_file = File.new()
+	if story_file.open(PROLOGUE_PATH, File.READ) != OK:
+		singleplayer_focus.grab_focus()
+		return
+	var story = parse_json(story_file.get_as_text())
+	story_file.close()
+	if typeof(story) != TYPE_DICTIONARY or not story.has("pages") or story.pages.empty():
+		singleplayer_focus.grab_focus()
+		return
+	prologue_pages = story.pages
+	prologue_page = 0
+	_render_prologue_page()
+	$top.hide()
+	$AnimatedSprite.hide()
+	$Title.hide()
+	$Subtitle.hide()
+	$intro.show()
+	$intro/Continue.grab_focus()
+
+func _render_prologue_page():
+	var page = prologue_pages[prologue_page]
+	$intro/Title.text = page.title
+	$intro/Story.text = page.text
+	$intro/Progress.text = "%d / %d" % [prologue_page + 1, prologue_pages.size()]
+	$intro/Continue.text = "Entrer dans l'aventure" if prologue_page == prologue_pages.size() - 1 else "Suite"
 
 func get_empty_server_timeout(arguments):
 	var empty_timeout
@@ -256,6 +287,25 @@ func _on_quickstart_pressed():
 	$top.show()
 	singleplayer_focus.grab_focus()
 	host_server(false, 0, 0, 1)
+
+func _on_intro_continue_pressed():
+	prologue_page += 1
+	if prologue_page < prologue_pages.size():
+		_render_prologue_page()
+		$intro/Continue.grab_focus()
+		return
+	_close_prologue()
+
+func _on_intro_skip_pressed():
+	_close_prologue()
+
+func _close_prologue():
+	$intro.hide()
+	$AnimatedSprite.show()
+	$Title.show()
+	$Subtitle.show()
+	$top.show()
+	singleplayer_focus.grab_focus()
 
 func open_error_message(message):
 	hide_menus()

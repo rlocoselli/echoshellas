@@ -74,6 +74,23 @@ var weapons_def = {
 		acquire_dialogue = ""}
 }
 
+# Stable IDs above are used by maps and network saves. This presentation catalog
+# gives the campaign its Greek identity without invalidating existing adventures.
+const HEROES = {
+	"Thalia": {"epithet": "Seeker of Aletheia", "virtue": "wisdom", "skin": "res://entities/player/chain.png"},
+	"Asteria": {"epithet": "Watcher of the Aegean", "virtue": "courage", "skin": "res://entities/player/knot.png"},
+	"Dorian": {"epithet": "Guardian of the Polis", "virtue": "justice", "skin": "res://entities/player/key.png"}
+}
+
+const ARTIFACTS = {
+	"Sword": {"title": "Xiphos of Athena", "theme": "A measured blade that rewards resolve."},
+	"Bow": {"title": "Apollo's Far-Sight", "theme": "An arrow follows the line of clear reason."},
+	"Bomb": {"title": "Hephaestus' Firepot", "theme": "A forge-born charge that opens sealed paths."},
+	"Lantern": {"title": "Lamp of Diogenes", "theme": "Its honest flame reveals what darkness conceals."},
+	"SeaCharm": {"title": "Poseidon's Talisman", "theme": "A token for crossing the restless deep."},
+	"Spiritpearl": {"title": "Oracle's Fragment", "theme": "Four fragments strengthen body and spirit."}
+}
+
 var items_def = {
 	"Lantern": {
 		icon = preload("res://entities/player/items/lantern.png"),
@@ -146,7 +163,7 @@ signal options_loaded
 
 var options = {
 	player_data = {
-		name="Chain",
+		name="Thalia",
 		skin="res://entities/player/chain.png",
 	}
 }
@@ -313,6 +330,15 @@ func load_options():
 	for option in loaded_options.keys():
 		options[option] = loaded_options.get(option)
 	load_options.close()
+	# Restore readable 16px player sheets for previous experimental selections.
+	var experimental_skins = {
+		"res://entities/player/thalia_greek.png": HEROES.Thalia.skin,
+		"res://entities/player/asteria_greek.png": HEROES.Asteria.skin,
+		"res://entities/player/dorian_greek.png": HEROES.Dorian.skin
+	}
+	if options.player_data.skin in experimental_skins:
+		options.player_data.skin = experimental_skins[options.player_data.skin]
+		save_options()
 	emit_signal("options_loaded")
 
 func change_map(map, entrance):

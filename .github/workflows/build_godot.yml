@@ -15,19 +15,25 @@ jobs:
           git rev-parse HEAD > semantic.version
       - name: Setup Godot
         run: |
-          wget https://downloads.tuxfamily.org/godotengine/3.3.2/Godot_v3.3.2-stable_linux_headless.64.zip -O Godot.zip
+          wget https://github.com/godotengine/godot/releases/download/3.3.2-stable/Godot_v3.3.2-stable_linux_headless.64.zip -O Godot.zip
           unzip Godot.zip
           rm Godot.zip
           mv Godot_v3.3.2-stable_linux_headless.64 /usr/local/bin/godot
+      - name: Check story and dialogue
+        run: node tests/content_check.js
+      - name: Smoke-test Godot scenes
+        run: |
+          godot --path "$GITHUB_WORKSPACE" --editor --quit
+          godot --path "$GITHUB_WORKSPACE" -s res://tests/smoke.gd
       - name: Build Project
         run: |
-          wget https://downloads.tuxfamily.org/godotengine/3.3.2/Godot_v3.3.2-stable_export_templates.tpz -q
+          wget https://github.com/godotengine/godot/releases/download/3.3.2-stable/Godot_v3.3.2-stable_export_templates.tpz -q
           unzip Godot_v3.3.2-stable_export_templates.tpz -d .
           mkdir -p ~/.local/share/godot/templates/3.3.2.stable
           mv templates/* ~/.local/share/godot/templates/3.3.2.stable
 
           mkdir -p $GITHUB_WORKSPACE/build
-          godot --export linux $GITHUB_WORKSPACE/build/TetraForce.x86_64
+          godot --export linux $GITHUB_WORKSPACE/build/AletheiaEchoesOfHellas.x86_64
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
@@ -46,19 +52,19 @@ jobs:
           git rev-parse HEAD > semantic.version
       - name: Setup Godot
         run: |
-          wget https://downloads.tuxfamily.org/godotengine/3.3.2/Godot_v3.3.2-stable_linux_headless.64.zip -O Godot.zip
+          wget https://github.com/godotengine/godot/releases/download/3.3.2-stable/Godot_v3.3.2-stable_linux_headless.64.zip -O Godot.zip
           unzip Godot.zip
           rm Godot.zip
           mv Godot_v3.3.2-stable_linux_headless.64 /usr/local/bin/godot
       - name: Build Project
         run: |
-          wget https://downloads.tuxfamily.org/godotengine/3.3.2/Godot_v3.3.2-stable_export_templates.tpz -q
+          wget https://github.com/godotengine/godot/releases/download/3.3.2-stable/Godot_v3.3.2-stable_export_templates.tpz -q
           unzip Godot_v3.3.2-stable_export_templates.tpz -d .
           mkdir -p ~/.local/share/godot/templates/3.3.2.stable
           mv templates/* ~/.local/share/godot/templates/3.3.2.stable
 
           mkdir -p $GITHUB_WORKSPACE/build
-          godot --export ${{ matrix.platform }} $GITHUB_WORKSPACE/build/TetraForce.exe
+          godot --export ${{ matrix.platform }} $GITHUB_WORKSPACE/build/AletheiaEchoesOfHellas.exe
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
