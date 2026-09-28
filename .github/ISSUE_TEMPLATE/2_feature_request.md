@@ -1,6 +1,6 @@
 ---
 name: 💡 Feature Request
-about: Ideas to improve TetraForce
+about: Ideas to improve Echoes of Hellas
 labels: 'request'
 ---
 

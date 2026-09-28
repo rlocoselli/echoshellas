@@ -1,6 +1,6 @@
 ---
 name: ❓ Question
-about: Ask a question about TetraForce
+about: Ask a question about Echoes of Hellas
 labels: 'question'
 ---
 

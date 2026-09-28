@@ -7,4 +7,4 @@
 ### Testing
 <!-- How do we test your changes -->
 
-[**Has this been tested in multiplayer?**](https://github.com/loudsmilestudios/TetraForce/wiki/How-to-test-multiplayer) *yes/no*
+**Has this been tested in multiplayer?** *yes/no*

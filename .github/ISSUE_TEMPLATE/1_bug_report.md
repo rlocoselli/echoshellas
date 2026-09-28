@@ -1,6 +1,6 @@
 ---
 name: 🐞 Bug report
-about: Report a bug in TetraForce
+about: Report a bug in Echoes of Hellas
 labels: 'bug'
 ---
 
