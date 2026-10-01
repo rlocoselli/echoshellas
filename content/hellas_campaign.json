@@ -1,22 +1,178 @@
 {
   "campaign": "Aletheia: Echoes of Hellas",
-  "premise": "The Moirai have cut the Thread of Truth. Three sworn heroes travel the Aegean to restore it before the polis forgets justice, courage, and wisdom.",
+  "premise": "In this original retelling, the Thread of Truth has vanished from the Moirai. Thalia, Asteria and Dorian follow its fragments from Delphi to Crete and the Aegean, restoring the memories that hold their cities together.",
   "heroes": [
-    {"id": "Thalia", "role": "Seeker of Aletheia", "virtue": "Wisdom", "inspiration": "Athena and Socratic inquiry"},
-    {"id": "Asteria", "role": "Watcher of the Aegean", "virtue": "Courage", "inspiration": "Artemis and the constellations"},
-    {"id": "Dorian", "role": "Guardian of the Polis", "virtue": "Justice", "inspiration": "the citizen-warrior ideal"}
+    {
+      "id": "Thalia",
+      "role": "Seeker of Aletheia",
+      "virtue": "Wisdom",
+      "inspiration": "Athena and Socratic inquiry",
+      "description": "Thalia studies the signs of Athena. Her lamp and patient questions uncover hidden paths. Recognize her ivory robes, teal mantle and owl clasp."
+    },
+    {
+      "id": "Asteria",
+      "role": "Watcher of the Aegean",
+      "virtue": "Courage",
+      "inspiration": "Artemis and the constellations",
+      "description": "Asteria navigates by the stars and honors Artemis. She scouts dangerous crossings with a bow at her side. Recognize her indigo tunic and silver crescent."
+    },
+    {
+      "id": "Dorian",
+      "role": "Guardian of the Polis",
+      "virtue": "Justice",
+      "inspiration": "the citizen-warrior ideal",
+      "description": "Dorian is a citizen sworn to protect his companions. He carries a bronze shield and follows the ideal of a just polis. Recognize his terracotta cloak and bronze armor."
+    }
   ],
   "artifacts": [
-    {"id": "Sword", "name": "Xiphos of Athena", "power": "A disciplined close-range strike"},
-    {"id": "Bow", "name": "Apollo's Far-Sight", "power": "A precise shot across a puzzle room"},
-    {"id": "Bomb", "name": "Hephaestus' Firepot", "power": "Breaks brittle stone and hidden seals"},
-    {"id": "Lantern", "name": "Lamp of Diogenes", "power": "Lights caverns and exposes concealed routes"},
-    {"id": "Spiritpearl", "name": "Oracle's Fragment", "power": "Four fragments grant another heart"}
+    {
+      "id": "Sword",
+      "name": "Xiphos of Athena",
+      "power": "A disciplined close-range strike"
+    },
+    {
+      "id": "Bow",
+      "name": "Apollo's Far-Sight",
+      "power": "A precise shot across a puzzle room"
+    },
+    {
+      "id": "Bomb",
+      "name": "Hephaestus' Firepot",
+      "power": "Breaks brittle stone and hidden seals"
+    },
+    {
+      "id": "Lantern",
+      "name": "Lamp of Diogenes",
+      "power": "Lights caverns and exposes concealed routes"
+    },
+    {
+      "id": "Spiritpearl",
+      "name": "Oracle's Fragment",
+      "power": "Four fragments grant another heart"
+    }
   ],
   "scenarios": [
-    {"id": "oracle_of_delphi", "title": "The Silent Oracle", "setting": "A mountain sanctuary above Delphi", "objective": "Use the Lamp of Diogenes to read shadow inscriptions, then open the spring with Apollo's Far-Sight.", "reward": "Oracle's Fragment", "philosophical_question": "Is knowledge received, or earned by asking better questions?"},
-    {"id": "labyrinth_of_knossos", "title": "The Thread Beneath Knossos", "setting": "A flooded Cretan labyrinth", "objective": "Mark a shared route, solve the four-virtue gate, and face the echo without becoming lost in rage.", "reward": "Xiphos of Athena blessing", "philosophical_question": "What makes a person the same self after every turning?"},
-    {"id": "isles_of_aeolus", "title": "The Unbound Winds", "setting": "Wind-carved Cycladic islands", "objective": "Coordinate switches across sea caves and return each wind to its proper vessel.", "reward": "Poseidon's Talisman", "philosophical_question": "Can freedom survive without responsibility?"},
-    {"id": "agora_of_shadows", "title": "The Trial in the Agora", "setting": "A moonlit agora haunted by false testimony", "objective": "Compare accounts, uncover contradictions, and choose the just remedy rather than the easy verdict.", "reward": "Laurel of Civic Concord", "philosophical_question": "Is justice merely agreement, or does it ask more of us?"}
+    {
+      "id": "oracle_of_delphi",
+      "title": "The Silent Oracle",
+      "setting": "A mountain sanctuary above Delphi",
+      "objective": "Follow Apollo’s fallen light through Delphi. Read three shadow inscriptions with the lamp, align the sun mirrors, and reopen the oracle’s spring.",
+      "reward": "Oracle's Fragment",
+      "philosophical_question": "Is knowledge received, or earned by asking better questions?",
+      "steps": [
+        "Find the sealed spring.",
+        "Reveal the three inscriptions.",
+        "Align the mirrors and recover the first thread."
+      ],
+      "myth": "Apollo and the oracle at Delphi",
+      "enemy": "spartoi",
+      "status": "Scenario brief — not yet a playable map"
+    },
+    {
+      "id": "labyrinth_of_knossos",
+      "title": "The Thread Beneath Knossos",
+      "setting": "A flooded Cretan labyrinth",
+      "objective": "Carry Ariadne’s thread into the labyrinth. Mark the return route, open the floodgates together, and lead the Minotaur away from the sealed chamber.",
+      "reward": "Xiphos of Athena blessing",
+      "philosophical_question": "What makes a person the same self after every turning?",
+      "steps": [
+        "Anchor the thread at the entrance.",
+        "Open the two floodgates.",
+        "Pass the guardian and recover the second thread."
+      ],
+      "myth": "Ariadne and the Minotaur",
+      "enemy": "minotaur",
+      "status": "Scenario brief — not yet a playable map"
+    },
+    {
+      "id": "isles_of_aeolus",
+      "title": "The Unbound Winds",
+      "setting": "Wind-carved Cycladic islands",
+      "objective": "Recover the wind vessels scattered across the islands of Aeolus. Cross the sea caves, evade harpies and return the winds to the keeper.",
+      "reward": "Poseidon's Talisman",
+      "philosophical_question": "Can freedom survive without responsibility?",
+      "steps": [
+        "Reach the wind shrine.",
+        "Recover the three wind vessels.",
+        "Seal the storm and restore the sea route."
+      ],
+      "myth": "Aeolus, keeper of the winds",
+      "enemy": "harpy",
+      "status": "Scenario brief — not yet a playable map"
+    },
+    {
+      "id": "agora_of_shadows",
+      "title": "The Trial in the Agora",
+      "setting": "A moonlit agora haunted by false testimony",
+      "objective": "Restore the names erased from the agora. Compare three witnesses, find the broken oath tablet, and release the warriors bound to a false accusation.",
+      "reward": "Laurel of Civic Concord",
+      "philosophical_question": "Is justice merely agreement, or does it ask more of us?",
+      "steps": [
+        "Hear the three witnesses.",
+        "Recover the oath tablet.",
+        "Present the evidence and free the guardians."
+      ],
+      "myth": "Greek civic life and the restless dead",
+      "enemy": "spartoi",
+      "status": "Scenario brief — not yet a playable map"
+    }
+  ],
+  "enemies": [
+    {
+      "id": "spartoi",
+      "name": "Spartoi — the oathless warriors",
+      "origin": "Inspired by the warriors born from dragon teeth. This game reimagines them as restless guardians.",
+      "description": "A bronze helmet rises from a heap of bones. The warrior wakes when approached and throws bones from a distance.",
+      "tactic": "Let it rise, step out of the projectile line, then close the distance.",
+      "status": "Playable skeleton enemy — original pixel sprite",
+      "art_region": [
+        0,
+        0,
+        768,
+        512
+      ]
+    },
+    {
+      "id": "harpy",
+      "name": "Harpy — raider of the winds",
+      "origin": "Inspired by the winged harpies of Greek myth.",
+      "description": "Dark wings and hooked talons mark this hunter above the sea cliffs.",
+      "tactic": "Planned encounter: watch for a dive, dodge sideways, then strike while it lands.",
+      "status": "Campaign concept",
+      "art_region": [
+        768,
+        0,
+        768,
+        512
+      ]
+    },
+    {
+      "id": "talos",
+      "name": "Talos — the bronze sentinel",
+      "origin": "Inspired by the bronze guardian of Crete.",
+      "description": "A towering automaton guards the island gates; amber seams reveal its inner fire.",
+      "tactic": "Planned encounter: avoid the heavy stomp and expose the seal at its ankle.",
+      "status": "Campaign concept",
+      "art_region": [
+        0,
+        512,
+        768,
+        512
+      ]
+    },
+    {
+      "id": "minotaur",
+      "name": "Minotaur — keeper of the labyrinth",
+      "origin": "Inspired by the bull-headed creature of the Cretan labyrinth.",
+      "description": "Broad horns and a heavy silhouette announce the guardian beyond the maze.",
+      "tactic": "Planned encounter: guide its charge into a pillar, then follow Ariadne’s thread to safety.",
+      "status": "Campaign concept",
+      "art_region": [
+        768,
+        512,
+        768,
+        512
+      ]
+    }
   ]
 }

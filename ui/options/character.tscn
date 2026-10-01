@@ -3,7 +3,7 @@
 [ext_resource path="res://entities/player/chain.png" type="Texture" id=2]
 [ext_resource path="res://ui/main/characterselect.gd" type="Script" id=3]
 [ext_resource path="res://ui/theme/font.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://ui/options/hero_lineup_hd.png" type="Texture" id=5]
+[ext_resource path="res://ui/hellas/odyssey.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 loop = true
@@ -120,5 +120,15 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HeroRole" type="Label" parent="characterselect"]
+margin_left = -30.0
+margin_top = 106.0
+margin_right = 254.0
+margin_bottom = 124.0
+text = "Thalia — Seeker of Aletheia"
+align = 1
+custom_colors/font_color = Color( 1, 0.9, 0.65, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 
 [connection signal="text_changed" from="characterselect/name" to="characterselect" method="_on_name_text_changed"]

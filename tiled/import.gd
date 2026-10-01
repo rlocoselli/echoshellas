@@ -44,7 +44,7 @@ func import_tilemap(tilemap):
 	if tilemap.has_meta("script"):
 		tilemap.set_script(load(tilemap.get_meta("script")))
 	if tilemap.has_meta("replace"):
-		replace_tilemap(tilemap, tilemap.get_meta("replace"))
+		tilemap = replace_tilemap(tilemap, tilemap.get_meta("replace"))
 	if tilemap.has_meta("z_index"):
 		tilemap.z_index = tilemap.get_meta("z_index")
 	if tilemap.has_meta("collision"):
@@ -75,13 +75,15 @@ func spawn_object(object):
 func replace_tilemap(tilemap, replace):
 	var used_cells = tilemap.get_used_cells()
 	var replacement = load(replace).instance()
+	for key in tilemap.get_meta_list():
+		replacement.set_meta(key, tilemap.get_meta(key))
 	tilemap.free()
 	scene.add_child(replacement)
 	replacement.set_owner(scene)
 	for cell in used_cells:
 		replacement.set_cellv(cell, 0)
 		replacement.update_bitmask_region()
-	#set_properties(tilemap, replacement)
+	return replacement
 
 func set_properties(object, node):
 	for meta in object.get_meta_list():

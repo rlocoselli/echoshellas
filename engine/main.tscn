@@ -9,7 +9,7 @@
 [ext_resource path="res://ui/loading_screen/loading_screen.tscn" type="PackedScene" id=7]
 [ext_resource path="res://ui/credits/Credits.tscn" type="PackedScene" id=8]
 [ext_resource path="res://ui/main/public_servers.gd" type="Script" id=9]
-[ext_resource path="res://ui/main/hellas_sanctuary_hd.png" type="Texture" id=10]
+[ext_resource path="res://ui/hellas/odyssey.png" type="Texture" id=10]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.03, 0.085, 0.12, 0.94 )
@@ -161,6 +161,13 @@ text = "Quitter"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CodexButton" type="Button" parent="top"]
+margin_left = 168.0
+margin_top = 126.0
+margin_right = 330.0
+margin_bottom = 150.0
+text = "Guide de l’Hellade"
 
 [node name="intro" type="Panel" parent="." groups=[
 "menu",

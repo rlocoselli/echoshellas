@@ -17,6 +17,10 @@ func _ready():
 
 func update_options():
 	$preview.texture = load(global.options.player_data.skin)
+	var index = skins.values().find(global.options.player_data.skin)
+	if index >= 0:
+		selected = index
+		update_hero_caption()
 
 func on_identity_loaded(id : Identity):
 
@@ -39,7 +43,12 @@ func update_skin(i):
 		global.options.player_data.name = $name.text
 	
 	global.options.player_data.skin = skins.values()[selected]
+	update_hero_caption()
 
 func _on_name_text_changed(new_text):
 	print(new_text)
 	#global.options.player_data.name = new_text
+
+func update_hero_caption():
+	var hero = skins.keys()[selected]
+	$HeroRole.text = hero + " — " + global.HEROES[hero].epithet

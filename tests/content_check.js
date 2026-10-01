@@ -58,3 +58,16 @@ for (const file of dialogueFiles) {
 }
 
 console.log(`Content OK: ${story.pages.length} prologue pages, ${campaign.scenarios.length} scenario briefs, ${dialogueFiles.length} dialogues`);
+
+const enemyIds = new Set(campaign.enemies.map(enemy => enemy.id));
+assert.equal(enemyIds.size, campaign.enemies.length);
+for (const scenario of campaign.scenarios) {
+  assert.ok(enemyIds.has(scenario.enemy), `Unknown enemy in ${scenario.id}`);
+  assert.equal(scenario.steps.length, 3);
+  assert.ok(scenario.status.includes("not yet"));
+}
+for (const file of ["ui/hellas/odyssey.png", "ui/hellas/bestiary.png", "ui/hellas/realms.png"]) {
+  const png = fs.readFileSync(path.join(root, file));
+  assert.equal(png.toString("ascii", 1, 4), "PNG");
+  assert.ok(png.readUInt32BE(16) >= 1536, `${file}: high resolution art required`);
+}

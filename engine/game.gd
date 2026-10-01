@@ -6,6 +6,7 @@ var camera = preload("res://entities/player/camera.tscn").instance()
 export var music = ""
 export var musicfx = ""
 export var light = "default"
+export var environment_theme = ""
 
 var current_enemies = []
 
@@ -13,6 +14,7 @@ func is_game():
 	return true
 
 func _ready():
+	preload("res://tiled/hellas/environment.gd").apply(self, environment_theme)
 	network.current_map = self
 	add_child(camera)
 	network.map_peers = []

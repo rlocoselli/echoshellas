@@ -8,6 +8,7 @@ var server_api = preload("res://engine/server_api.gd").new()
 const PROLOGUE_PATH = "res://content/prologue.json"
 var prologue_pages = []
 var prologue_page = 0
+var hellas_guide
 
 onready var address_line = $multiplayer/Direct/address
 onready var lobby_line = $multiplayer/Automatic/lobby
@@ -16,6 +17,10 @@ onready var singleplayer_focus = $top/VBoxContainer/singleplayer
 onready var loading_screen = $loading_screen_layer/loading_screen
 
 func _ready():
+	hellas_guide = preload("res://ui/hellas/guide.gd").new()
+	add_child(hellas_guide)
+	hellas_guide.connect("closed", self, "_close_hellas_guide")
+	$top/CodexButton.connect("pressed", self, "_open_hellas_guide")
 	$AnimatedSprite.playing = true
 	global.load_options()
 	hide_menus()
@@ -364,3 +369,11 @@ func _on_credits_pressed():
 	$credits.show()
 	$back.show()
 	$back.grab_focus()
+
+func _open_hellas_guide():
+	hide_menus()
+	hellas_guide.open()
+
+func _close_hellas_guide():
+	$top.show()
+	$top/CodexButton.grab_focus()
